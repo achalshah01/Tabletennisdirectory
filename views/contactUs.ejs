@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+<link rel="stylesheet" href="../assets/css/blades-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+
+	<% if (signLabel == "Sign Out"){ %>
+ 	 <% include partials/header-signedin.ejs %>
+ 	 <% }else{ %>
+
+  <% include partials/header.ejs %>
+  <%} %>
+
+ 	 <section>
+ 		 <h5 id="textHide">Text</h5>
+ 		 <% if (signLabel == "Sign Out"){ %>
+ 			 <% include partials/user-navigation-signedid.ejs %>
+ 				 <% }else{ %>
+ 		 <% include partials/user-navigation.ejs %>
+  <%} %>
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<p class="smallFont">Home>Contact Us</p>
+		<br>
+		<h2>Contact Us</h2>
+		<br>
+
+		<br>
+		<ul class="DescriptionList">
+			<li>Well, we would love to hear from you!</li>
+			<li><br></li>
+			<li>Please e-mail us at  <a href="mailto:ashah77@uncc.edu">info@tabletennisdirectory.com</a> and let us know what's in your mind! </li>
+		</ul>
+
+
+
+
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+
+</body>
+</html>

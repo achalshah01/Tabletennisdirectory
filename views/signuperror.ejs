@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ -->
+ <link rel="stylesheet" href="../assets/css/sign-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+<!-- <% %> -->
+<% include partials/header.ejs %>
+
+
+	<section>
+		<h5 id="textHide">Text</h5>
+		<% include partials/user-navigation.ejs %>
+
+		<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+
+
+		<h2> Oops ! Sign Up error.</h2>
+		<br>
+	    <main>
+	      <br>
+	       <p> The new user you are trying to register to Sign Up already exists.</p>
+         <p>Please try to sign Up again using other Email Id and User Id.</p>
+         <p>Already signed up? <a href="/signin">Sign In!</a></p>
+	       <p>New user? <a href=/signup><u>Sign Up!</u></a></p>
+	    </main>
+
+	</div>
+	</section>
+		<% include partials/footer.ejs %>
+
+
+
+</body>
+</html>

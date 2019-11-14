@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ -->
+ <link rel="stylesheet" href="../assets/css/sign-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+<!-- <% %> -->
+<% include partials/header.ejs %>
+
+
+	<section>
+		<h5 id="textHide">Text</h5>
+		<% include partials/user-navigation.ejs %>
+
+		<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<h2>Sign Up!</h2>
+		<br>
+	      <main>
+
+	        <form action="/signup" method='post'>
+	  <label>User Id:</label><br>
+	  <input type="text" id="userid" name="userid" required/>
+	  <br>
+    <label>First Name:</label><br>
+	  <input type="text" id="firstname" name="firstname" required/>
+	  <br>
+    <label>Last Name:</label><br>
+	  <input type="text" id="lastname" name="lastname" required/>
+	  <br>
+    <label>E-mail ID:</label><br>
+	  <input type="text" id="email" name="email" required/>
+	  <br>
+	  <label>Password:</label><br>
+	  <input type="password" id="password" name="password" required>
+	  <br><br>
+	  <input type="submit" value="Sign Up">
+	  </form>
+	      </main>
+	</div>
+	</section>
+		<% include partials/footer.ejs %>
+
+
+
+</body>
+</html>

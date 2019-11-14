@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+	<% if (signLabel == "Sign Out"){ %>
+		<% include partials/header-signedin.ejs %>
+		<% }else{ %>
+
+	<% include partials/header.ejs %>
+	<%} %>
+
+		<section>
+			<h5 id="textHide">Text</h5>
+			<% if (signLabel == "Sign Out"){ %>
+				<% include partials/user-navigation-signedid.ejs %>
+					<% }else{ %>
+			<% include partials/user-navigation.ejs %>
+	<%} %>
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<%if (item.length === 0){ %>
+			<article class="productArticle">
+				<p>Not a valid Item according to data</p>
+			</article>
+			<% } else { %>
+		<article class="productArticle">
+							<p class="smallFont">Home > Categories> <%= item[0].subCategory %> > <%= item[0].brand %> </p>
+						<h2>
+						Product details
+					</h2>
+								<h5 id="whitespace">Text</h5>
+								<table>
+									<tr>
+										<td><img src=" <%= item[0].imageUrl %> " alt="Smiley face"></td>
+										<td class="tabelText"><h2><%= item[0].itemName %></h2>
+										<h3> <%= item[0].subCategory %> </h3>
+										<h3> Everyone's Rating <%= item[0].rating %> </h3>
+										<!--<p>&#9733;&#9733;&#9733;&#9733;&#x2606;</p>-->
+										</td>
+									</tr>
+									<tr>
+									<td colspan="2">
+
+										<form method="POST">
+
+											<button type="submit" formaction="/mysaveditems?action=save&item_code=<%=item[0].itemCode%>" value="save">Save it
+											</button>
+										</form>
+										<form>
+											<button type="submit" formaction="/categories" >Back to Category	</button>
+
+										</form>
+
+									</td>
+									</tr>
+
+								</table>
+								<br>
+								<div id = "prodDes">
+								<h4>Description</h4>
+								<p > <%= item[0].Description %> </p>
+					<br>
+					<br>
+					<!-- <h4>Write your own review</h4>
+
+					<textarea rows="4" cols="50" placeholder= "Write your experience about this product...">
+						</textarea>
+						<input type="submit" value="Submit"> -->
+						<br>
+						<br>
+						<br>
+
+					</div>
+
+		</article>
+		<% }%>
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+</body>
+</html>

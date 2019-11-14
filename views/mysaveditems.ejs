@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>Table Tennis Directory</title>
+</head>
+<body>
+
+		<% include partials/header-signedin.ejs %>
+
+
+
+
+		<section>
+			<h5 id="textHide">Text</h5>
+
+				<% include partials/user-navigation-signedid.ejs %>
+		<% include partials/site-navigation.ejs %>
+	<% if (currentUserItemList ===undefined){%>
+	<p> Please Sign In </p>
+		<% } else {%>
+
+	<div class="description">
+
+		<article class="productArticle">
+			<h2>
+				My saved items
+			</h2>
+			<h5 id="whitespace">Text</h5>
+			<table>
+				<tr>
+					<th>Product Name</th>
+					<th>Sub Category</th>
+					<th>My Rating</th>
+					<th>Used It?</th>
+					<th></th>
+					<th> </th>
+				</tr>
+				<tr>
+					<% for(let i=0; i < currentUserItemList.length; i++) {%>
+					<td> <%=currentUserItemList[i].itemName %> </td>
+
+
+
+					<td><%=currentUserItemList[i].subCategory %></td>
+
+					<td><%= currentUserItemList[i].rating%></td>
+
+					<td><%= currentUserItemList[i].usedIt%></td>
+					 <!--<td><% if (currentUserItemList[i].usedIt==='Yes') {%>-->
+							 <!--<input type="checkbox" checked name="usedIt" value="name">-->
+						 <!--<% }else {%>-->
+							 <!--<input type="checkbox" name="usedIt" value="name">-->
+						 <!--<% } %>-->
+					 <!--</td>-->
+						<td><a href="/mysaveditems?action=delete&item_code=<%- currentUserItemList[i].itemCode %>"><button >Remove</button></a></td>
+					<td><a href="/feedback?action=update&user_id=<%- currentUserItemList[i].userId %>&item_code=<%- currentUserItemList[i].itemCode %>"><button >Update</button></a></td>
+					<!--<td><form>-->
+					<!--<button type=submit formaction="index" >Remove-->
+					<!--</button>-->
+					<!--</form></td>-->
+					<!--<td><form><button type=submit formaction="feedback" >Update-->
+					<!--</button>-->
+					<!--</form></td>-->
+
+				</tr>
+				<%} %>
+				<!--<tr>-->
+				<!--<td><a href="productDetails.html">Timo Boll ALC </a> </td>-->
+				<!--<td>Blade</td>-->
+				<!--<td>&#9733;&#9733;&#9733;&#9733;&#x2606;</td>-->
+				<!--<td><form>-->
+				<!--<button type=submit formaction="index.html" >Remove-->
+				<!--</button>-->
+				<!--</form></td>-->
+				<!--<td><form><button type=submit formaction="feedback" >Update-->
+				<!--</button>-->
+				<!--</form></td>-->
+				<!--</tr>-->
+
+
+			</table>
+			<br>
+			<% }%>
+
+		</article>
+	</div>
+</section>
+<% include partials/footer.ejs %>
+
+</body>
+</html>

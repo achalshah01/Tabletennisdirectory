@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="../assets/css/blades-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+	<% if (signLabel == "Sign Out"){ %>
+		<% include partials/header-signedin.ejs %>
+		<% }else{ %>
+
+	<% include partials/header.ejs %>
+	<% } %>
+
+		<section>
+			<h5 id="textHide">Text</h5>
+			<% if (signLabel == "Sign Out"){ %>
+				<% include partials/user-navigation-signedid.ejs %>
+					<% }else{ %>
+			<% include partials/user-navigation.ejs %>
+	<%} %>
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<p class="smallFont">Home>Categories</p>
+		<br>
+		<h2>Categories</h2>
+		<br>
+		<h4>
+			Browse by Sub Categories
+		</h4>
+		<br>
+		<% if(subCategory.length!=0){ %>
+		<ul>
+			<li><a href="/categories/<%= subCategory[0].subCategory %>"><%= subCategory[0].subCategory %></a></li>
+			<li><a href="/categories/<%= subCategory[1].subCategory %>"><%= subCategory[1].subCategory %></a></li>
+			<li><a href="/categories/<%= subCategory[2].subCategory %>"><%= subCategory[2].subCategory %></a></li>
+			<li><a href="/categories/<%= subCategory[3].subCategory %>"><%= subCategory[3].subCategory %></a></li>
+		</ul>
+		<%} else{ %>
+			<h4> No items available at the moment, sorry!</h4>
+		<% } %>
+
+
+
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="../assets/css/blades-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+	<% include partials/header.ejs %>
+
+
+	<section>
+		<h5 id="textHide">Text</h5>
+		<% include partials/user-navigation.ejs %>
+
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<p class="smallFont">Home>Categories>Rubbers</p>
+		<h2>Rubbers</h2>
+		<br>
+		<h4>
+			Browse by brands
+		</h4>
+		<label for="menu-toggle">Butterfly</label>
+<input type="checkbox" id="menu-toggle"/>
+<ul id="menu">
+	<%	for(var i=0; i< item.length; i++){
+console.log("here1 "+item[i].brand+"  "+item[i].subCategory);
+		if(item[i].brand=="Butterfly" && item[i].subCategory=="Rubbers") {
+			console.log("here"); %>
+		<li><a href="/categories/productDetails/<%= item[i].itemCode %>"><%= item[i].itemName %></a></li>
+
+<%}	}%>
+
+</ul>
+<label for="menu-toggle2">DHS</label>
+<input type="checkbox" id="menu-toggle2"/>
+<ul id="menu2">
+	<%	for(var i=0; i< item.length; i++){
+console.log("here1 "+item[i].brand+"  "+item[i].subCategory);
+		if(item[i].brand=="DHS" && item[i].subCategory=="Rubbers") {
+			console.log("here"); %>
+		<li><a href="/categories/productDetails/<%= item[i].itemCode %>"><%= item[i].itemName %></a></li>
+
+<%}	}%>
+
+</ul>
+<label for="menu-toggle3">Xiom</label>
+<input type="checkbox" id="menu-toggle3"/>
+<ul id="menu3">
+	<%	for(var i=0; i< item.length; i++){
+console.log("here1 "+item[i].brand+"  "+item[i].subCategory);
+		if(item[i].brand=="Xiom" && item[i].subCategory=="Rubbers") {
+			console.log("here"); %>
+		<li><a href="/categories/productDetails/<%= item[i].itemCode %>"><%= item[i].itemName %></a></li>
+
+<%}	}%>
+
+</ul>
+<form>
+<button type=submit formaction="/categories" >Go to Category
+</button>
+</form>
+
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+</body>
+</html>

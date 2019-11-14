@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="../assets/css/blades-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+
+<% if (signLabel == "Sign Out"){ %>
+	<% include partials/header-signedin.ejs %>
+	<% }else{ %>
+
+<% include partials/header.ejs %>
+<%} %>
+
+	<section>
+		<h5 id="textHide">Text</h5>
+		<% if (signLabel == "Sign Out"){ %>
+			<% include partials/user-navigation-signedid.ejs %>
+				<% }else{ %>
+		<% include partials/user-navigation.ejs %>
+<%} %>
+		<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<p class="smallFont">Home>About</p>
+		<br>
+		<h2>About</h2>
+		<br>
+
+		<br>
+		<ul class="DescriptionList">
+			<li>We are a group of table tennis enthusiasts who want to increase awareness about table tennis equipments.</li>
+			<li><br></li>
+			<li>Let the Table Tennis war begin!</li>
+		</ul>
+
+
+
+
+	</div>
+	</section>
+		<% include partials/footer.ejs %>
+
+
+
+</body>
+</html>

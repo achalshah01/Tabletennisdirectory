@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+
+<link rel="stylesheet" href="../assets/css/blades-style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+	<% if (signLabel == "Sign Out"){ %>
+		<% include partials/header-signedin.ejs %>
+		<% }else{ %>
+
+	<% include partials/header.ejs %>
+	<%} %>
+
+		<section>
+			<h5 id="textHide">Text</h5>
+			<% if (signLabel == "Sign Out"){ %>
+				<% include partials/user-navigation-signedid.ejs %>
+					<% }else{ %>
+			<% include partials/user-navigation.ejs %>
+	<%} %>
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+		<p class="smallFont">Home>Categories>Shoes</p>
+		<h2>Shoes</h2>
+		<br>
+		<h4>
+			Browse by brands
+		</h4>
+		<label for="menu-toggle">Adidas</label>
+<input type="checkbox" id="menu-toggle"/>
+<ul id="menu">
+	<%	for(var i=0; i< item.length; i++){
+console.log("here1 "+item[i].brand+"  "+item[i].subCategory);
+		if(item[i].brand=="Adidas" && item[i].subCategory=="Shoes") {
+			console.log("here"); %>
+		<li><a href="/categories/productDetails/<%= item[i].itemCode %>"><%= item[i].itemName %></a></li>
+
+<%}	}%>
+
+
+</ul>
+<label for="menu-toggle2">Butterfly</label>
+<input type="checkbox" id="menu-toggle2"/>
+<ul id="menu2">
+	<%	for(var i=0; i< item.length; i++){
+console.log("here1 "+item[i].brand+"  "+item[i].subCategory);
+		if(item[i].brand=="Butterfly" && item[i].subCategory=="Shoes") {
+			console.log("here"); %>
+		<li><a href="/categories/productDetails/<%= item[i].itemCode %>"><%= item[i].itemName %></a></li>
+
+<%}	}%>
+
+
+</ul>
+<form>
+<button type=submit formaction="/categories" >Go to Category
+</button>
+</form>
+
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<title>Table Tennis Directory</title>
+</head>
+<body>
+	<% if (signLabel == "Sign Out"){ %>
+		<% include partials/header-signedin.ejs %>
+		<% }else{ %>
+
+	<% include partials/header.ejs %>
+	<%} %>
+
+		<section>
+			<h5 id="textHide">Text</h5>
+			<% if (signLabel == "Sign Out"){ %>
+				<% include partials/user-navigation-signedid.ejs %>
+					<% }else{ %>
+			<% include partials/user-navigation.ejs %>
+	<%} %>
+	<% include partials/site-navigation.ejs %>
+
+	<div class="description">
+
+		<article class="productArticle">
+			<h2>
+			Home
+		</h2>
+					<h5 style="display:none">Text</h5>
+					<table>
+						<tr>
+							<td><img src="../assets/images/tenergy05.jpg" class="productImage" alt="Smiley face"></td>
+							<td class="tabelText"><h3>Tenergy 05</h3> This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</td>
+						</tr>
+					</table>
+					<br>
+					<table>
+						<tr>
+							<td><img src="../assets/images/timoboll.jpg" class="productImage" alt="Smiley face"></td>
+							<td class="tabelText"><h3>Timo Boll ALC</h3> This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.This is some text.</td>
+						</tr>
+					</table>
+
+		</article>
+	</div>
+	</section>
+	<% include partials/footer.ejs %>
+
+
+
+
+
+</body>
+</html>
